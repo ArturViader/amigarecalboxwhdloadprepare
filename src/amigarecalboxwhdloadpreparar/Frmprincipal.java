@@ -331,11 +331,11 @@ public class Frmprincipal extends javax.swing.JFrame {
             writer.write("button_for_quit=2\n");
             writer.write("gfx_framerate=0\n");
             writer.write("gfx_width=704\n");
-            writer.write("gfx_height=282\n");
+            writer.write("gfx_height=280\n");
             writer.write("gfx_width_windowed=704\n");
-            writer.write("gfx_height_windowed=282\n");
+            writer.write("gfx_height_windowed=280\n");
             writer.write("gfx_width_fullscreen=704\n");
-            writer.write("gfx_height_fullscreen=282\n");
+            writer.write("gfx_height_fullscreen=280\n");
             writer.write("gfx_lores=true\n");
             writer.write("gfx_resolution=lores\n");
             writer.write("gfx_correct_aspect=0\n");

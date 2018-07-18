@@ -53,6 +53,7 @@ public class Frmprincipal extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,47 +119,54 @@ public class Frmprincipal extends javax.swing.JFrame {
             }
         });
 
+        jButton7.setText("Crear solo lanzadores");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jButton3)
-                        .addGap(49, 49, 49)
-                        .addComponent(jButton6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton5))
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
-                                        .addComponent(tjuegos, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(twb)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton1)
-                                    .addComponent(jButton2)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel4)
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tjuegos, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(timagenes)))))
+                                .addComponent(twb)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addComponent(jButton2)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(timagenes)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton5))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,7 +194,8 @@ public class Frmprincipal extends javax.swing.JFrame {
                     .addComponent(jButton3)
                     .addComponent(jButton4)
                     .addComponent(jButton5)
-                    .addComponent(jButton6))
+                    .addComponent(jButton6)
+                    .addComponent(jButton7))
                 .addContainerGap())
         );
 
@@ -207,7 +216,7 @@ public class Frmprincipal extends javax.swing.JFrame {
         //    
         if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
             tjuegos.setText(chooser.getSelectedFile().getPath());
-
+            
         } else {
             System.out.println("No Selection ");
         }
@@ -228,19 +237,19 @@ public class Frmprincipal extends javax.swing.JFrame {
         //    
         if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
             twb.setText(chooser.getSelectedFile().getPath());
-
+            
         } else {
             System.out.println("No Selection ");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    
     private void creauae(String directorio) {
         BufferedWriter writer = null;
         try {
-
+            tlog.append(directorio + "\n");
             File logFile = new File(tjuegos.getText() + "/" + directorio + ".uae");
             writer = new BufferedWriter(new FileWriter(logFile));
-
+            
             writer.write("config_description=UAE default configuration\n");
             writer.write("config_hardware=true\n");
             writer.write("config_host=true\n");
@@ -559,10 +568,10 @@ public class Frmprincipal extends javax.swing.JFrame {
             writer.write("input.4.keyboard.0.friendlyname=Default Keyboard\n");
             writer.write("input.4.keyboard.0.name=KEYBOARD0\n");
             writer.write("input.4.keyboard.0.custom=true\n");
-
+            
         } catch (Exception e) {
             e.printStackTrace();
-
+            
         } finally {
             try {
                 writer.close();
@@ -572,7 +581,7 @@ public class Frmprincipal extends javax.swing.JFrame {
     }
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
+        
         boolean excluye = false;
         if (!tjuegos.getText().equals("") && !twb.getText().equals("")) {
             //Obtenemos los directorios (cada juego)
@@ -583,7 +592,7 @@ public class Frmprincipal extends javax.swing.JFrame {
                     return new File(current, name).isDirectory();
                 }
             });
-
+            
             File srcDir = new File(twb.getText() + "/C");
             File destDir = new File(tjuegos.getText() + "/sistema/C");
             try {
@@ -591,7 +600,7 @@ public class Frmprincipal extends javax.swing.JFrame {
             } catch (Exception ex) {
                 tlog.append("Error copiando carpetas del sistema C");
             }
-
+            
             srcDir = new File(twb.getText() + "/S");
             destDir = new File(tjuegos.getText() + "/sistema/S");
             try {
@@ -599,7 +608,7 @@ public class Frmprincipal extends javax.swing.JFrame {
             } catch (Exception ex) {
                 tlog.append("Error copiando carpetas del sistema S");
             }
-
+            
             srcDir = new File(twb.getText() + "/Devs");
             destDir = new File(tjuegos.getText() + "/sistema/Devs");
             try {
@@ -607,17 +616,16 @@ public class Frmprincipal extends javax.swing.JFrame {
             } catch (Exception ex) {
                 tlog.append("Error copiando carpetas del sistema DEVS");
             }
-
+            
             try {
                 BufferedWriter writer = new BufferedWriter(new FileWriter(tjuegos.getText() + "/sistema/S/Startup-Sequence"));
-                writer.write("dh1:\nWHDLoad recaljuego.slave Preload ButtonWait\nUaeQuit");
+                writer.write("dh1:\nexecute recaljue.cli");
                 writer.close();
                 
-
             } catch (Exception e) {
                 tlog.append("Error escribiendo startup-sequence");
             }
-
+            
             for (String directorio : directories) {
                 excluye = false;
                 if (!timagenes.getText().equals("")) {
@@ -628,11 +636,27 @@ public class Frmprincipal extends javax.swing.JFrame {
                 if (timagenes.getText().equals("sistema")) {
                     excluye = true;
                 }
-
+                
                 if (!excluye) {
                     creauae(directorio);
+                    
+                    crealanzador(directorio);
+                    
+                }
+                
+            }
+            tlog.append("Proceso completado.");
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecciona un directorio de juegos y uno de workbench", "Error", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
 
-                    try {
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void crealanzador(String directorio)
+    {
+          try {
                         //create a temporary file
 
                         File dir = new File(tjuegos.getText() + "/" + directorio);
@@ -640,11 +664,11 @@ public class Frmprincipal extends javax.swing.JFrame {
                             public boolean accept(File dir, String name) {
                                 return name.toLowerCase().endsWith(".slave");
                             }
-
+                            
                         });
-
+                        
                         if (files.length > 0) {
-
+                           
                             // File (or directory) with old name
                             File viejo = new File(tjuegos.getText() + "/" + directorio + "/" + files[0].getName());
 
@@ -663,28 +687,26 @@ public class Frmprincipal extends javax.swing.JFrame {
                             // Rename file (or directory)
 
                             
+                            
+                            try {
+                                
+                                BufferedWriter writer = new BufferedWriter(new FileWriter(tjuegos.getText() + "/" + directorio + "/recaljue.cli"));
+                                writer.write("WHDLoad recaljuego.slave Preload ButtonWait\nUaeQuit");
+                                
+                                writer.close();
+                            } catch (Exception e) {
+                                tlog.append("Error escribiendo lanzador cli. recaljue.cli");
+                            }
+                            
                         } else {
                             tlog.append("No se encuentra el archivo whdload del juego " + directorio);
                         }
 
                         //Close writer
-                       
                     } catch (Exception e) {
-                        tlog.append("Error renombrando slave");
+                        tlog.append("Error listando archivos slave");
                     }
-
-                }
-
-            }
-            tlog.append("Proceso completado.");
-
-        } else {
-            JOptionPane.showMessageDialog(null, "Selecciona un directorio de juegos y uno de workbench", "Error", JOptionPane.INFORMATION_MESSAGE);
-        }
-
-
-    }//GEN-LAST:event_jButton3ActionPerformed
-
+    }
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         int cont = 0;
@@ -696,7 +718,7 @@ public class Frmprincipal extends javax.swing.JFrame {
                 return new File(current, name).isDirectory();
             }
         });
-
+        
         for (String directorio : directories) {
             excluye = false;
             if (!timagenes.getText().equals("")) {
@@ -704,9 +726,9 @@ public class Frmprincipal extends javax.swing.JFrame {
                     excluye = true;
                 }
             }
-
+            
             if (!excluye) {
-
+                
                 File f = new File(tjuegos.getText() + "/" + directorio + "/DEVS");
                 if (!(f.exists() && f.isDirectory())) {
                     tlog.append("Falta DEVS en juego " + directorio);
@@ -730,7 +752,7 @@ public class Frmprincipal extends javax.swing.JFrame {
                 return new File(current, name).isDirectory();
             }
         });
-
+        
         for (String directorio : directories) {
             excluye = false;
             if (!timagenes.getText().equals("")) {
@@ -738,9 +760,9 @@ public class Frmprincipal extends javax.swing.JFrame {
                     excluye = true;
                 }
             }
-
+            
             if (!excluye) {
-
+                
                 File f = new File(tjuegos.getText() + "/" + directorio + "/c");
                 if ((f.exists() & f.isFile())) {
                     tlog.append("Existe C en juego " + directorio);
@@ -763,7 +785,45 @@ public class Frmprincipal extends javax.swing.JFrame {
                     return new File(current, name).isDirectory();
                 }
             });
+            
+            for (String directorio : directories) {
+               tlog.append(directorio);
+                excluye = false;
+                if (!timagenes.getText().equals("")) {
+                    if (timagenes.getText().equals(directorio)) {
+                        excluye = true;
+                    }
+                }
+                if (timagenes.getText().equals("sistema")) {
+                    excluye = true;
+                }
+                
+                if (!excluye) {
+                    creauae(directorio);
+                }
+            }
+            tlog.append("Proceso completado.");
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecciona un directorio de juegos.", "Error", JOptionPane.INFORMATION_MESSAGE);
+        }
 
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        
+          boolean excluye = false;
+        if (!tjuegos.getText().equals("")) {
+            //Obtenemos los directorios (cada juego)
+            File file = new File(tjuegos.getText());
+            String[] directories = file.list(new FilenameFilter() {
+                @Override
+                public boolean accept(File current, String name) {
+                    return new File(current, name).isDirectory();
+                }
+            });
+            
             for (String directorio : directories) {
                 excluye = false;
                 if (!timagenes.getText().equals("")) {
@@ -771,21 +831,22 @@ public class Frmprincipal extends javax.swing.JFrame {
                         excluye = true;
                     }
                 }
-                 if (timagenes.getText().equals("sistema")) {
+                if (timagenes.getText().equals("sistema")) {
                     excluye = true;
                 }
-
+                
                 if (!excluye) {
-                    creauae(directorio);
+                    crealanzador(directorio);
                 }
             }
             tlog.append("Proceso completado.");
-
+            
         } else {
             JOptionPane.showMessageDialog(null, "Selecciona un directorio de juegos.", "Error", JOptionPane.INFORMATION_MESSAGE);
         }
-
-    }//GEN-LAST:event_jButton6ActionPerformed
+        
+        
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -801,21 +862,21 @@ public class Frmprincipal extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-
+                    
                 }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(Frmprincipal.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(Frmprincipal.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(Frmprincipal.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Frmprincipal.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -837,6 +898,7 @@ public class Frmprincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
